@@ -1,38 +1,39 @@
-# Exercícios de Programação
+# Kings Study
 
-Repositório com minhas soluções de exercícios de plataformas de programação, organizadas por site e linguagem.
+Personal repository for studying programming concepts, languages, and problem-solving across different contexts.
 
-## Sobre
+## About
 
 <p align="justify">
-    Resolvo esses exercícios principalmente para aprender novas linguagens. Saber o conceito não basta — trabalhar com arrays em Swift é diferente de trabalhar em C++, e é nesse detalhe prático que os exercícios ajudam muito. Cada linguagem tem suas peculiaridades, e resolver o mesmo tipo de problema em contextos diferentes acelera bastante o aprendizado.
+    This repository is a space for learning and experimentation. It covers two main areas: proof-of-concept projects to validate and explore technical concepts in practice, and programming exercises to sharpen logic skills and deepen understanding of how different languages handle the same problems.
 </p>
 
 <p align="justify">
-    O URI foi o primeiro site que tive contato, logo no início da faculdade. Com o tempo, passei a usar também o LeetCode e o HackerRank, motivado principalmente por preparação para entrevistas técnicas de big techs. Cada plataforma tem seu estilo e foco diferente, mas todas contribuem da mesma forma: prática.
+    The goal is not just to know that something works — it's to understand why it works, and how the same idea looks and behaves across different languages and environments.
+</p>
+
+## Exercises
+
+<p align="justify">
+    Solving the same type of problem in different languages reveals a lot. Working with arrays in Swift is different from C++, and understanding those differences hands-on is far more effective than reading about them. Exercises also help with interview preparation and serve as a reference when picking up a new language.
 </p>
 
 <p align="justify">
-    Quando dei aulas, usava o URI como base para passar exercícios aos alunos — é uma plataforma ótima para quem está começando. Isso explica por que você vai encontrar bastante comentário explicando o que está acontecendo linha a linha. No início, anotar o raciocínio ajudava a consolidar o entendimento, e mantive esse hábito.
+    Most exercises include inline comments explaining what's happening at each step — a habit from the early days of learning, kept because it still helps when revisiting old code or sharing it with others. You'll also find alternative solutions alongside personal ones, often AI-suggested, to compare approaches and identify room for improvement.
 </p>
 
-<p align="justify">
-    Além das minhas próprias soluções, você pode encontrar aqui soluções alternativas — muitas vezes sugeridas por IA — para comparar abordagens, ver formas mais eficientes de resolver o mesmo problema e entender onde há espaço para melhoria.
-</p>
-
-## Sites
-
-| Site | Linguagens | Contexto |
+### Sites
+| Site | Languages | Context |
 |---|---|---|
-| [URI / Beecrowd](Exercises/URI/) | ![C](https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white) ![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=mysql&logoColor=white) ![Swift](https://img.shields.io/badge/Swift-FA7343?style=flat-square&logo=swift&logoColor=white) | Primeiro contato, usado também em aulas |
-| [LeetCode](Exercises/Leetcode/) | ![Swift](https://img.shields.io/badge/Swift-FA7343?style=flat-square&logo=swift&logoColor=white) | Preparação para entrevistas técnicas |
+| [URI / Beecrowd](Exercises/URI/) | ![C](https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white) ![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=mysql&logoColor=white) ![Swift](https://img.shields.io/badge/Swift-FA7343?style=flat-square&logo=swift&logoColor=white) | First contact, also used when teaching |
+| [LeetCode](Exercises/Leetcode/) | ![Swift](https://img.shields.io/badge/Swift-FA7343?style=flat-square&logo=swift&logoColor=white) | Technical interview prep |
 
-## Autor
+## Author
 <table>
   <tr>
     <td align="center">
       <a href="https://github.com/Gui25Reis">
-        <img src="https://avatars1.githubusercontent.com/u/48360732" width="100px;" alt="Foto do Gui Reis no GitHub"/><br>
+        <img src="https://avatars1.githubusercontent.com/u/48360732" width="100px;" alt="Gui Reis's profile picture at GitHub"/><br>
         <sub>
           <b>Gui Reis</b>
         </sub>
