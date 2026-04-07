@@ -32,10 +32,16 @@ kings-study/
 │   │   └── Swift/
 │   └── HackerRank/               ← Future: same structure
 │       └── Swift/
+├── Studies/                      ← iOS POC/study projects (one folder per project)
+│   ├── KeyboardHandler/
+│   └── PhoneMasks/
 └── Templates/
-    └── Swift-Project/
-        ├── new-project.sh        ← Script to bootstrap a new site
-        └── Template.zip          ← Zipped base project (source of truth for template)
+    ├── Swift-Exercise/           ← Template for exercise projects (CommandLine + Tests)
+    │   ├── new-project.sh        ← creates under Exercises/<SiteName>/Swift/
+    │   └── Template.zip
+    └── Swift-Project/            ← Template for iOS app projects
+        ├── new-project.sh        ← creates under Studies/<ProjectName>/
+        └── Template.zip
 ```
 
 ---
