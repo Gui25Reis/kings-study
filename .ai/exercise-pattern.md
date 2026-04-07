@@ -273,14 +273,57 @@ final class Uri1001Tests: XCTestCase {
 
 Same pattern — use the number as file name and function name.
 
-### Sites with slug-based IDs (LeetCode)
+### LeetCode
 
-Adapt the naming:
-- File: `two-sum.swift`
-- Function: `exTwoSum(input:)` or use a descriptive name
-- Test class: `LeetcodeTwoSumTests` (use the site name as prefix)
+LeetCode problems don't use stdin/stdout — they receive typed parameters and return a value. The `InputProvider` pattern does not apply here.
 
-The `InputProvider` pattern still applies if the problem reads from stdin. For LeetCode-style problems that receive function parameters directly (no stdin), `InputProvider` may not be necessary — the function can take direct parameters and return a value instead. In that case, the test file still follows the same `XCTestCase` structure but calls the function directly without `validate(expected:)`.
+**File naming:** `NNNN-ProblemName.swift` — includes both the number and the problem name, since LeetCode problems are better identified by name than by number alone.
+
+**Exercise file structure:** two layers — a public `struct` as the interface, and a `fileprivate` function with the actual implementation.
+
+```swift
+// MARK: - Exercício
+
+struct Ex0001 {
+    func solution(_ nums: [Int], _ target: Int) -> [Int] {
+        twoSum(nums, target)
+    }
+}
+
+fileprivate func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+    // implementation
+}
+```
+
+- `struct ExNNNN` — named after the exercise number, exposes `solution()` which mirrors the LeetCode function signature
+- `fileprivate func` — the actual implementation, named exactly as LeetCode defines it; `fileprivate` keeps it scoped to the file and avoids name collisions across exercises
+- `solution()` just delegates to the private function — this keeps the struct clean and the implementation isolated
+
+**Test file:** `LCNNNNTests.swift`
+
+The test instantiates the struct as `lazy var ex` and calls `.solution()`:
+
+```swift
+final class LC0001Tests: XCTestCase {
+
+    lazy var ex = Ex0001()
+
+    private func validate(nums: [Int], target: Int, expected: [Int]) {
+        let result = ex.solution(nums, target)
+        XCTAssertEqual(expected, result)
+    }
+
+    func test_01() {
+        validate(nums: [2, 7, 11, 15], target: 9, expected: [0, 1])
+    }
+}
+```
+
+**What stays the same:**
+- `XCTestCase` structure
+- `test_01`, `test_02`... naming
+- Private `validate` helper
+- `LC` prefix on the class name (`LC` instead of `LeetCode` — shorter, consistent)
 
 ---
 
