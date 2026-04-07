@@ -1,6 +1,6 @@
 # Exercise Pattern (Swift)
 
-This document describes the exact pattern used to create a new exercise in any Swift project in this repository. URI/Beecrowd is the canonical reference, but the same pattern applies to LeetCode, HackerRank, and any other site.
+This document describes the exact pattern used to create a new exercise in any Swift project in this repository. The pattern is the same across all sites (URI, LeetCode, HackerRank, etc.) — examples below use URI as reference since it was the first site configured.
 
 ---
 
@@ -251,23 +251,23 @@ final class Uri1001Tests: XCTestCase {
 
 ## Workflow: Adding a New Exercise
 
-1. Open the site (e.g., beecrowd.com) and find the exercise
+1. Open the site and find the exercise
 2. Create `Application/Sources/Exercises/NNNN.swift` with the function stub
 3. Implement the solution using `input.readLine()` and `input.print()`
-4. Create `Application/Tests/ExNNNNTests.swift` with test cases from the problem's sample section
+4. Create `Application/Tests/<SiteName>NNNNTests.swift` with test cases from the problem's sample section
 5. Run tests from Xcode or via CLI:
    ```bash
-   xcodebuild -workspace URI.xcworkspace \
-              -scheme URI \
+   xcodebuild -workspace <SiteName>.xcworkspace \
+              -scheme <SiteName> \
               -destination 'platform=macOS' \
-              -only-testing:URITests \
+              -only-testing:<SiteName>Tests \
               test
    ```
 6. No `tuist generate` needed when adding new files — Tuist uses glob patterns so new files are picked up automatically on the next build
 
 ---
 
-## Adapting the Pattern for Other Sites
+## Adapting the Pattern per Site
 
 ### Sites with numeric IDs (URI, HackerRank)
 

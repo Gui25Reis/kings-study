@@ -18,19 +18,18 @@ This repository contains programming exercises from competitive coding platforms
 ## Repository Structure
 
 ```
-Uri/
+kings-study/
 ├── .ai/                          ← AI context documents (this folder)
 ├── .gitignore                    ← includes Tuist-generated files
 ├── Exercises/
-│   ├── URI/
-│   │   ├── Swift/                ← Active Tuist project for URI
-│   │   ├── Swift-Old/            ← Legacy Xcode project (kept for reference)
+│   ├── URI/                      ← One folder per site
+│   │   ├── Swift/                ← Tuist project
 │   │   ├── C/
 │   │   ├── C++/
 │   │   ├── Python/
 │   │   └── SQL/
 │   ├── Leetcode/
-│   │   └── Swift/                ← Tuist project for LeetCode (created via template)
+│   │   └── Swift/
 │   └── HackerRank/               ← Future: same structure
 │       └── Swift/
 └── Templates/
@@ -197,7 +196,7 @@ tuist generate --no-open
 
 ## Why No Framework?
 
-The original project used a Framework target so that the test target could do `@testable import UriFramework`. This was the only way to share code between the CommandLine and test targets in plain Xcode.
+The original URI project used a Framework target so that the test target could do `@testable import UriFramework`. This was the only way to share code between the CommandLine and test targets in plain Xcode.
 
 With Tuist, both targets can reference the same source files directly via `sources:` globs. This eliminates the need for a Framework entirely, reducing the project from 3 targets to 2.
 
@@ -208,15 +207,13 @@ The test files **do not need any import** to access exercise functions — they 
 ## Running Tests from CLI
 
 ```bash
-cd Exercises/URI/Swift
-xcodebuild -workspace URI.xcworkspace \
-           -scheme URI \
+cd Exercises/<SiteName>/Swift
+xcodebuild -workspace <SiteName>.xcworkspace \
+           -scheme <SiteName> \
            -destination 'platform=macOS' \
-           -only-testing:URITests \
+           -only-testing:<SiteName>Tests \
            test
 ```
-
-Replace `URI` and `URITests` with the appropriate site name.
 
 ---
 
