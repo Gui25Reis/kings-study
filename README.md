@@ -1,33 +1,39 @@
-<p>
-    <a href="https://www.urionlinejudge.com.br"><img align="center" style="margin: 0px auto;" src="https://github.com/Gui25Reis/Uri/blob/master/_outros/logo.png"/></a>
-</p>
-<p align="center">
-    Meu <a href="https://www.urionlinejudge.com.br/judge/pt/profile/318386">perfil</a> - TOP 10 do <a href="https://www.urionlinejudge.com.br/judge/pt/users/university/upm">Mackenzie</a>
-</p>
-<p align="justify"style="text-indent: 40px">
-    <a href="https://www.urionlinejudge.com.br">Uri</a> é um site com vários problemas simples e complexos para treinar a lógica. Nele dá pra testar as soluções e saber na hora se conseguiu de fato resolver o exercício ou não. <br/>
-</p>
-<p align="justify"style="text-indent: 40px">
-    Pra mim ajudou bastante, principlmente no começo com os conceitos básicos! Recomendo para iniciantes e também pra quem quer aprender uma nova linguagem, já que puxa alguns conceitos básicos, apendendo sobre as sintaxe dela.
+# Kings Study
+
+Personal repository for studying programming concepts, languages, and problem-solving across different contexts.
+
+## About
+
+<p align="justify">
+    This repository is a space for learning and experimentation. It covers two main areas: proof-of-concept projects to validate and explore technical concepts in practice, and programming exercises to sharpen logic skills and deepen understanding of how different languages handle the same problems.
 </p>
 
-# Meus exercícios
-Estou disponibilizando meus exercícios comentados e identados. Conforme for fazendo vou adicionando os novos.
+<p align="justify">
+    The goal is not just to know that something works — it's to understand why it works, and how the same idea looks and behaves across different languages and environments.
+</p>
 
-## ⚠️ ATENÇÂO ⚠️
+## Exercises
 
-Eu não tenho problema em você se basear nos exercícios, peço a única gentileza de em caso de cópia, modificar algumas coisas! O Uri tem [restrições](https://www.urionlinejudge.com.br/judge/pt/terms-and-conditions) próprias em relação a isso:
+<p align="justify">
+    Solving the same type of problem in different languages reveals a lot. Working with arrays in Swift is different from C++, and understanding those differences hands-on is far more effective than reading about them. Exercises also help with interview preparation and serve as a reference when picking up a new language.
+</p>
 
+<p align="justify">
+    Most exercises include inline comments explaining what's happening at each step — a habit from the early days of learning, kept because it still helps when revisiting old code or sharing it with others. You'll also find alternative solutions alongside personal ones, often AI-suggested, to compare approaches and identify room for improvement.
+</p>
 
->   Usuários podem compartilhar suas soluções (códigos-fonte) em repositórios públicos (como GitHub, BitBucket ou semelhantes) e sites pessoais de acordo com sua vontade. Todavia, fica proibido o uso destes por parte de terceiros no URI Online Judge. Os usuários que porventura façam uso desta prática podem ter suas contas desativadas sem aviso prévio.
+### Sites
+| Site | Languages | Context |
+|---|---|---|
+| [URI / Beecrowd](Exercises/URI/) | ![C](https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white) ![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=mysql&logoColor=white) ![Swift](https://img.shields.io/badge/Swift-FA7343?style=flat-square&logo=swift&logoColor=white) | First contact, also used when teaching |
+| [LeetCode](Exercises/Leetcode/) | ![Swift](https://img.shields.io/badge/Swift-FA7343?style=flat-square&logo=swift&logoColor=white) | Technical interview prep |
 
-
-## Autor
+## Author
 <table>
   <tr>
     <td align="center">
       <a href="https://github.com/Gui25Reis">
-        <img src="https://avatars1.githubusercontent.com/u/48360732" width="100px;" alt="Foto do Gui Reis no GitHub"/><br>
+        <img src="https://avatars1.githubusercontent.com/u/48360732" width="100px;" alt="Gui Reis's profile picture at GitHub"/><br>
         <sub>
           <b>Gui Reis</b>
         </sub>
