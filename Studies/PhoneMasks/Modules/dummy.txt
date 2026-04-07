@@ -1,0 +1,14 @@
+To add a module:
+
+1. Create the folder structure:
+   Modules/<ModuleName>/Sources/
+   Modules/<ModuleName>/Tests/
+
+2. Add the target in Project.swift:
+   moduleTarget(name: "<ModuleName>")
+
+3. Add it to the app target's dependencies:
+   .target(name: "<ModuleName>")
+
+4. Run:
+   tuist generate --no-open

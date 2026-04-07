@@ -2,6 +2,9 @@
 
 Personal repository for studying programming concepts, languages, and problem-solving across different contexts.
 
+> [!NOTE]
+> Documentations in this repository was written with AI assistance.
+
 ## About
 
 <p align="justify">
@@ -11,6 +14,17 @@ Personal repository for studying programming concepts, languages, and problem-so
 <p align="justify">
     The goal is not just to know that something works — it's to understand why it works, and how the same idea looks and behaves across different languages and environments.
 </p>
+
+## Studies
+
+<p align="justify">
+    Proof-of-concept projects built to explore specific iOS topics in isolation. Each one came from a real curiosity or a concrete demand — a way to study a concept properly before applying it in a larger context.
+</p>
+
+| Project | Language | Description |
+|---|---|---|
+| [Keyboard Handler](Studies/KeyboardHandler/) | ![Swift](https://img.shields.io/badge/Swift-FA7343?style=flat-square&logo=swift&logoColor=white) | Generic handler to make any view follow the keyboard |
+| [Phone Masks](Studies/PhoneMasks/) | ![Swift](https://img.shields.io/badge/Swift-FA7343?style=flat-square&logo=swift&logoColor=white) | Phone mask for input usage with support for multiple formats |
 
 ## Exercises
 

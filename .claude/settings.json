@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(unzip -l /Users/kings/Documents/GitHub/Uri/temp/Projeto-Template.zip)",
+      "Bash(unzip -q \"/Users/kings/Documents/GitHub/Uri/temp/Projeto-Template.zip\" -d /tmp/projeto-template)",
+      "Read(//tmp/projeto-template/**)"
+    ]
+  }
+}
