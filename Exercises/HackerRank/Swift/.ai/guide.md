@@ -136,9 +136,17 @@ final class HR000XTests: XCTestCase {
 - Os testes do enunciado vêm primeiro, sob `/* Testes */`
 - Os testes criados pela IA vêm depois, sob `/* Additional tests */`
 - Cada teste deve ter um comentário descrevendo o cenário e o input resumido (ex: `// nums=[1,2,3], k=3, M=2`)
-- Testes criados pela IA inicialmente adicionados **comentados** com `expected = ""`
-- O usuário decide quando descomentar — ao descomentar, a IA preenche o `expected` calculado manualmente
+- Testes criados pela IA devem ser adicionados **descomentados** com o `expected` já calculado manualmente e preenchido
 - Quando há parâmetros extras (ex: k e M), adicionar comentário explicitando cada um antes do `inputs`
+
+### Tipo do validate
+
+O tipo do `expected` e do `validate` depende do retorno do exercício:
+
+- Retorno `Int` ou `[[Int]]` → `validate(expected: String)` com `XCTAssertEqual(expected, "\(result)")`
+- Retorno `Bool` → `validate(expected: Bool)` com `XCTAssertEqual(expected, result)`
+
+Sempre bater o tipo do `validate` com o tipo de retorno do `solution`.
 
 ---
 
@@ -159,6 +167,19 @@ O `MockInputProvider` recebe `inputs: [String]` e devolve um elemento por chamad
 - O usuário envia apenas a função `fileprivate` para o HackerRank, não a `struct`
 - Timeout nos testes do HackerRank indica que a solução excede o limite de tempo — geralmente significa que a complexidade precisa ser reduzida
 - O primeiro caso de teste que falha costuma ser o edge case de array vazio (n=0)
+- O boilerplate do HackerRank é travado e não pode ser editado — o crash do `1...n` não tem como ser contornado pelo usuário
+- **Non-ASCII**: Swift no HackerRank não aceita caracteres não-ASCII. Comentários em português com acentos (`é`, `ã`, `ç`, etc.) causam erro de compilação. Ao submeter, o usuário deve remover todos os comentários com acentos
+
+## Input formats comuns
+
+O `Input Format` varia por exercício — sempre ler o comentário do arquivo com atenção. Padrões mais comuns encontrados até agora:
+
+- **Elementos em linhas separadas**: cada número em uma linha (ex: 0001, 0004, 0007)
+- **Elementos na mesma linha separados por espaço**: todos numa linha só (ex: 0008)
+- **Matriz**: linha com qtd de rows + linha com qtd de colunas + uma linha por row com elementos separados por espaço (ex: 0002, 0009)
+- **String única**: uma linha só com a string (ex: 0005)
+- **Duas strings**: uma por linha (ex: 0006)
+- **Parâmetros extras após o array**: k, M, target etc. vêm depois dos elementos (ex: 0003, 0007)
 
 ---
 
