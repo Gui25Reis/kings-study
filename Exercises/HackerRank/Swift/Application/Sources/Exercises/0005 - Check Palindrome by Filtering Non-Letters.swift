@@ -122,7 +122,7 @@ fileprivate func aiSolution(code: String) -> Bool {
  SUBMITION 02
  ============
  */
-extension String {
+fileprivate extension String {
     subscript(index: Int) -> Character {
         self[self.index(self.startIndex, offsetBy: index)]
     }
