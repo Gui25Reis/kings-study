@@ -69,7 +69,7 @@
  link: https://www.hackerrank.com/contests/software-engineer-prep-kit/challenges/time-slot-task-pairing
  */
 
-struct Ex0017 {
+struct Ex0015 {
     func solution(input: InputProvider = DefaultInputProvider()) -> [Int] {
         guard let nInput = input.readLine(), let n = Int(nInput)
         else { return [-1, -1] }

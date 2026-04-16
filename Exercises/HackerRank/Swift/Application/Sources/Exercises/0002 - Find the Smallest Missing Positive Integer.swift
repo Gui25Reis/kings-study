@@ -61,7 +61,7 @@
  link: https://www.hackerrank.com/contests/software-engineer-prep-kit/challenges/find-smallest-missing-positive-integer
  */
 
-struct Ex0004 {
+struct Ex0002 {
     func solution(input: InputProvider = DefaultInputProvider()) -> Int {
         let dataInput = input.readLine()
         

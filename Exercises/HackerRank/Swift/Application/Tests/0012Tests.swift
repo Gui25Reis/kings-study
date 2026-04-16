@@ -23,59 +23,59 @@ final class HR0012Tests: XCTestCase {
 
     /* Testes */
     func test_01() {
-        // head=[5,6,7,8], k=3 — remove posicao 3 do fim (0-indexed) = head (5)
-        let expected = "[6, 7, 8]"
-        inputs = ["4", "5", "6", "7", "8", "3"]
+        // head=[1,2,2,2,3,4,4,5]
+        let expected = "[1, 2, 3, 4, 5]"
+        inputs = ["8", "1", "2", "2", "2", "3", "4", "4", "5"]
         validate(expected: expected)
     }
 
     func test_02() {
-        // head=[5], k=1 — k invalido (>= n), retorna lista original
-        let expected = "[5]"
-        inputs = ["1", "5", "1"]
+        // head=[] — lista vazia
+        let expected = "[]"
+        inputs = ["0"]
         validate(expected: expected)
     }
 
     func test_03() {
-        // head=[1,2], k=0 — remove ultimo (2)
+        // head=[1] — unico elemento
         let expected = "[1]"
-        inputs = ["2", "1", "2", "0"]
+        inputs = ["1", "1"]
         validate(expected: expected)
     }
 
     /* Additional tests */
     func test_04() {
-        // head=[1,2,3,4,5], k=2 — remove posicao 2 do fim (3)
-        let expected = "[1, 2, 4, 5]"
-        inputs = ["5", "1", "2", "3", "4", "5", "2"]
+        // head=[1,1,1,1] — todos iguais
+        let expected = "[1]"
+        inputs = ["4", "1", "1", "1", "1"]
         validate(expected: expected)
     }
 
     func test_05() {
-        // head=[1,2,3], k=0 — remove ultimo (3)
-        let expected = "[1, 2]"
-        inputs = ["3", "1", "2", "3", "0"]
+        // head=[1,2,3,4,5] — sem duplicatas
+        let expected = "[1, 2, 3, 4, 5]"
+        inputs = ["5", "1", "2", "3", "4", "5"]
         validate(expected: expected)
     }
 
     func test_06() {
-        // head=[7], k=0 — remove unico elemento
-        let expected = "[]"
-        inputs = ["1", "7", "0"]
+        // head=[1,1,2,2,3,3] — pares de duplicatas
+        let expected = "[1, 2, 3]"
+        inputs = ["6", "1", "1", "2", "2", "3", "3"]
         validate(expected: expected)
     }
 
     func test_07() {
-        // head=[], k=0 — lista vazia
-        let expected = "[]"
-        inputs = ["0", "0"]
+        // head=[-3,-3,-1,0,0,2] — valores negativos com duplicatas
+        let expected = "[-3, -1, 0, 2]"
+        inputs = ["6", "-3", "-3", "-1", "0", "0", "2"]
         validate(expected: expected)
     }
 
     func test_08() {
-        // head=[1,2,3,4,5], k=4 — remove head (1)
-        let expected = "[2, 3, 4, 5]"
-        inputs = ["5", "1", "2", "3", "4", "5", "4"]
+        // head=[1,1] — dois elementos iguais
+        let expected = "[1]"
+        inputs = ["2", "1", "1"]
         validate(expected: expected)
     }
 }

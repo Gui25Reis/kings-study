@@ -62,7 +62,7 @@
  */
 
 
-struct Ex0011 {
+struct Ex0009 {
     func solution(input: InputProvider = DefaultInputProvider()) -> [Int] {
         guard let nInput = input.readLine(), let n = Int(nInput)
         else { return [] }

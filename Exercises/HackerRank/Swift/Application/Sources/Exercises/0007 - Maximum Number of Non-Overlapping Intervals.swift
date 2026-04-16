@@ -83,7 +83,7 @@
  link: https://www.hackerrank.com/contests/software-engineer-prep-kit/challenges/maximum-non-overlapping-intervals
  */
 
-struct Ex0009 {
+struct Ex0007 {
     func solution(input: InputProvider = DefaultInputProvider()) -> Int {
         guard let rowsInput = input.readLine(), let rows = Int(rowsInput)
         else { return 0 }

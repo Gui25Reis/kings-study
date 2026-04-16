@@ -70,7 +70,7 @@
  link: https://www.hackerrank.com/contests/software-engineer-prep-kit/challenges/check-valid-anagram
  */
 
-struct Ex0018 {
+struct Ex0016 {
     func solution(input: InputProvider = DefaultInputProvider()) -> Int {
         guard let s = input.readLine(), let t = input.readLine()
         else { return 0 }

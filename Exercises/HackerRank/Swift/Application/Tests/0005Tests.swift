@@ -17,7 +17,7 @@ final class HR0005Tests: XCTestCase {
 
 
     /* Aux */
-    private func validate(expected: Bool) {
+    private func validate(expected: String) {
         // Prepare
         let provider = MockInputProvider(inputs: inputs)
 
@@ -25,87 +25,105 @@ final class HR0005Tests: XCTestCase {
         let result = ex.solution(input: provider)
 
         // Validation
-        XCTAssertEqual(expected, result)
+        XCTAssertEqual(expected, "\(result)")
     }
 
 
     /* Testes */
     func test_01() {
         // Prepare
-        // code="A1b2B!a"
-        let expected = true
-        inputs = ["A1b2B!a"]
+        // nums=[1,2,3,4,5], target=3
+        let expected = "2"
+        inputs = ["5", "1", "2", "3", "4", "5", "3"]
 
         // Action
         validate(expected: expected)
     }
 
     func test_02() {
-        // Prepare - sample 0: único caractere
-        // code="Z"
-        let expected = true
-        inputs = ["Z"]
+        // Prepare
+        // nums=[2,4,6,8,10,12,14,16], target=16
+        let expected = "7"
+        inputs = ["8", "2", "4", "6", "8", "10", "12", "14", "16", "16"]
 
         // Action
         validate(expected: expected)
     }
 
     func test_03() {
-        // Prepare - sample 1: letras e dígitos, palindromo
-        // code="abc123cba"
-        let expected = true
-        inputs = ["abc123cba"]
+        // Prepare - sample 0: array vazio
+        // nums=[], target=5
+        let expected = "-1"
+        inputs = ["0", "5"]
+
+        // Action
+        validate(expected: expected)
+    }
+
+    func test_04() {
+        // Prepare - sample 1: unico elemento encontrado
+        // nums=[10], target=10
+        let expected = "0"
+        inputs = ["1", "10", "10"]
 
         // Action
         validate(expected: expected)
     }
 
     /* Additional tests */
-    func test_04() {
-        // Prepare - string vazia
-        // code=""
-        let expected = true
-        inputs = [""]
-
-        // Action
-        validate(expected: expected)
-    }
-
     func test_05() {
-        // Prepare - só símbolos, nenhuma letra
-        // code="123!@#"
-        let expected = true
-        inputs = ["123!@#"]
+        // Prepare - target nao existe no array
+        // nums=[1,2,3,4,5], target=6
+        let expected = "-1"
+        inputs = ["5", "1", "2", "3", "4", "5", "6"]
 
         // Action
         validate(expected: expected)
     }
 
     func test_06() {
-        // Prepare - não é palíndromo
-        // code="abc"
-        let expected = false
-        inputs = ["abc"]
+        // Prepare - target eh o primeiro elemento
+        // nums=[1,2,3,4,5], target=1
+        let expected = "0"
+        inputs = ["5", "1", "2", "3", "4", "5", "1"]
 
         // Action
         validate(expected: expected)
     }
 
     func test_07() {
-        // Prepare - case insensitive com símbolos no meio
-        // code="A!b!a"
-        let expected = true
-        inputs = ["A!b!a"]
+        // Prepare - target eh o ultimo elemento
+        // nums=[1,2,3,4,5], target=5
+        let expected = "4"
+        inputs = ["5", "1", "2", "3", "4", "5", "5"]
 
         // Action
         validate(expected: expected)
     }
 
     func test_08() {
-        // Prepare - não é palíndromo com símbolos no meio
-        // code="a!b!c"
-        let expected = false
-        inputs = ["a!b!c"]
+        // Prepare - target menor que todos os elementos
+        // nums=[5,10,15,20], target=1
+        let expected = "-1"
+        inputs = ["4", "5", "10", "15", "20", "1"]
+
+        // Action
+        validate(expected: expected)
+    }
+
+    func test_09() {
+        // Prepare - negativos no array
+        // nums=[-5,-3,-1,2,4], target=-3
+        let expected = "1"
+        inputs = ["5", "-5", "-3", "-1", "2", "4", "-3"]
+
+        // Action
+        validate(expected: expected)
+    }
+    
+    func test_10() {
+        let expected = "-1"
+        inputs = ["0", "5"]
 
         // Action
         validate(expected: expected)

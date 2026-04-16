@@ -14,78 +14,68 @@ final class HR0010Tests: XCTestCase {
 
 
     /* Aux */
-    private func validate(expected: Bool) {
+    private func validate(expected: String) {
         let provider = MockInputProvider(inputs: inputs)
         let result = ex.solution(input: provider)
-        XCTAssertEqual(expected, result)
+        XCTAssertEqual(expected, "\(result)")
     }
 
 
     /* Testes */
     func test_01() {
-        // code_snippet="if (a[0] > b[1]) { doSomething(); }"
-        inputs = ["if (a[0] > b[1]) { doSomething(); }"]
-        validate(expected: true)
+        // head=[5,6,7,8], k=3 — remove posicao 3 do fim (0-indexed) = head (5)
+        let expected = "[6, 7, 8]"
+        inputs = ["4", "5", "6", "7", "8", "3"]
+        validate(expected: expected)
     }
 
     func test_02() {
-        // code_snippet="int x = 42; // no brackets here"
-        inputs = ["int x = 42; // no brackets here"]
-        validate(expected: true)
+        // head=[5], k=1 — k invalido (>= n), retorna lista original
+        let expected = "[5]"
+        inputs = ["1", "5", "1"]
+        validate(expected: expected)
     }
 
     func test_03() {
-        // code_snippet="() {} []"
-        inputs = ["() {} []"]
-        validate(expected: true)
+        // head=[1,2], k=0 — remove ultimo (2)
+        let expected = "[1]"
+        inputs = ["2", "1", "2", "0"]
+        validate(expected: expected)
     }
 
     /* Additional tests */
     func test_04() {
-        // code_snippet="" (string vazia)
-        inputs = [""]
-        validate(expected: true)
+        // head=[1,2,3,4,5], k=2 — remove posicao 2 do fim (3)
+        let expected = "[1, 2, 4, 5]"
+        inputs = ["5", "1", "2", "3", "4", "5", "2"]
+        validate(expected: expected)
     }
 
     func test_05() {
-        // code_snippet="(" (abre sem fechar)
-        inputs = ["("]
-        validate(expected: false)
+        // head=[1,2,3], k=0 — remove ultimo (3)
+        let expected = "[1, 2]"
+        inputs = ["3", "1", "2", "3", "0"]
+        validate(expected: expected)
     }
 
     func test_06() {
-        // code_snippet=")" (fecha sem abrir)
-        inputs = [")"]
-        validate(expected: false)
+        // head=[7], k=0 — remove unico elemento
+        let expected = "[]"
+        inputs = ["1", "7", "0"]
+        validate(expected: expected)
     }
 
     func test_07() {
-        // code_snippet="([)]" (cruzamento de brackets)
-        inputs = ["([)]"]
-        validate(expected: false)
+        // head=[], k=0 — lista vazia
+        let expected = "[]"
+        inputs = ["0", "0"]
+        validate(expected: expected)
     }
 
     func test_08() {
-        // code_snippet="{[]}" (aninhamento correto)
-        inputs = ["{[]}"]
-        validate(expected: true)
-    }
-
-    func test_09() {
-        // code_snippet="{{{" (multiplos abertos sem fechar)
-        inputs = ["{{{"]
-        validate(expected: false)
-    }
-
-    func test_10() {
-        // code_snippet="abc(def[ghi{jkl}mno]pqr)stu" (brackets validos com texto)
-        inputs = ["abc(def[ghi{jkl}mno]pqr)stu"]
-        validate(expected: true)
-    }
-    
-    func test_11() {
-        // code_snippet="abc(def[ghi{jkl}mno]pqr)stu" (brackets validos com texto)
-        inputs = ["[ { ( ) } ]"]
-        validate(expected: true)
+        // head=[1,2,3,4,5], k=4 — remove head (1)
+        let expected = "[2, 3, 4, 5]"
+        inputs = ["5", "1", "2", "3", "4", "5", "4"]
+        validate(expected: expected)
     }
 }

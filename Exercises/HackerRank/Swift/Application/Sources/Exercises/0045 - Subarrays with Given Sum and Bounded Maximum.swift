@@ -48,7 +48,7 @@
  https://www.hackerrank.com/contests/software-engineer-prep-kit/challenges/subarrays-given-sum-bounded-maximum
  */
 
-struct Ex0003 {
+struct Ex0045 {
     func solution(input: InputProvider = DefaultInputProvider()) -> Int {
         guard let qtdInput = input.readLine(), let qtd = Int(qtdInput)
         else { return 0 }

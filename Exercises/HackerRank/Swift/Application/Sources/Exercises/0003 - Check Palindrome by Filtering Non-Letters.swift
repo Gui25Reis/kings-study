@@ -42,7 +42,7 @@
  link: https://www.hackerrank.com/contests/software-engineer-prep-kit/challenges/check-palindrome-filter-non-letters
  */
 
-struct Ex0005 {
+struct Ex0003 {
     func solution(input: InputProvider = DefaultInputProvider()) -> Bool {
         guard let code = input.readLine() else { return false }
         return isAlphabeticPalindrome(code: code)

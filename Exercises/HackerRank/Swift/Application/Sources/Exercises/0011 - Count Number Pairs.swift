@@ -67,7 +67,7 @@
  link: https://www.hackerrank.com/contests/software-engineer-prep-kit/challenges/count-number-pairs
  */
 
-struct Ex0013 {
+struct Ex0011 {
     func solution(input: InputProvider = DefaultInputProvider()) -> Int {
         guard let nInput = input.readLine(), let n = Int(nInput)
         else { return 0 }

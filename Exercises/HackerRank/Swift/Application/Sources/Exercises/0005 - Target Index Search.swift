@@ -63,7 +63,7 @@
  0
  */
 
-struct Ex0007 {
+struct Ex0005 {
     func solution(input: InputProvider = DefaultInputProvider()) -> Int {
         guard let qtdInput = input.readLine(), let qtd = Int(qtdInput)
         else { return -1 }

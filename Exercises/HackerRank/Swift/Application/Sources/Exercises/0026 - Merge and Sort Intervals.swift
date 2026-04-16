@@ -38,7 +38,7 @@
  https://www.hackerrank.com/contests/software-engineer-prep-kit/challenges/merge-and-sort-intervals
  */
 
-struct Ex0002 {
+struct Ex0026 {
     func solution(input: InputProvider = DefaultInputProvider()) -> [[Int]] {
         // Array qtd
         let qtdInput = input.readLine()

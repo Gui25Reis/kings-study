@@ -5,10 +5,7 @@ final class HR0009Tests: XCTestCase {
     var inputs: [String]! = .init()
     lazy var ex = Ex0009()
 
-    /* Ciclo de Vida */
-    override func setUp() {
-        super.setUp()
-    }
+    override func setUp() { super.setUp() }
 
     override func tearDown() {
         inputs = nil
@@ -18,96 +15,72 @@ final class HR0009Tests: XCTestCase {
 
     /* Aux */
     private func validate(expected: String) {
-        // Prepare
         let provider = MockInputProvider(inputs: inputs)
-
-        // Action
         let result = ex.solution(input: provider)
-
-        // Validation
         XCTAssertEqual(expected, "\(result)")
     }
 
 
     /* Testes */
     func test_01() {
-        // Prepare
-        // meetings=[[1,2],[2,3],[3,4],[1,3]]
-        let expected = "3"
-        inputs = ["4", "2", "1 2", "2 3", "3 4", "1 3"]
-
-        // Action
+        // operations=['push 2','push 0','push 3','push 0','getMin','pop','getMin','pop','top','getMin']
+        let expected = "[0, 0, 0, 0]"
+        inputs = ["10", "push 2", "push 0", "push 3", "push 0", "getMin", "pop", "getMin", "pop", "top", "getMin"]
         validate(expected: expected)
     }
 
     func test_02() {
-        // Prepare
-        // meetings=[[0,5],[0,1],[1,2],[2,3],[3,5],[4,6]]
-        let expected = "4"
-        inputs = ["6", "2", "0 5", "0 1", "1 2", "2 3", "3 5", "4 6"]
-
-        // Action
+        // operations=['push 5','getMin']
+        let expected = "[5]"
+        inputs = ["2", "push 5", "getMin"]
         validate(expected: expected)
     }
 
     func test_03() {
-        // Prepare - sample 0: unico intervalo
-        // meetings=[[5,10]]
-        let expected = "1"
-        inputs = ["1", "2", "5 10"]
-
-        // Action
-        validate(expected: expected)
-    }
-
-    func test_04() {
-        // Prepare - sample 1: intervalos adjacentes
-        // meetings=[[1,2],[2,3],[3,4]]
-        let expected = "3"
-        inputs = ["3", "2", "1 2", "2 3", "3 4"]
-
-        // Action
+        // operations=['push 0','top']
+        let expected = "[0]"
+        inputs = ["2", "push 0", "top"]
         validate(expected: expected)
     }
 
     /* Additional tests */
-    func test_05() {
-        // Prepare - array vazio
-        // meetings=[]
-        let expected = "0"
-        inputs = ["0", "2"]
+    func test_04() {
+        // push crescente, min deve ser sempre o primeiro
+        // operations=['push 1','push 2','push 3','getMin']
+        let expected = "[1]"
+        inputs = ["4", "push 1", "push 2", "push 3", "getMin"]
+        validate(expected: expected)
+    }
 
-        // Action
+    func test_05() {
+        // push decrescente, min deve ser sempre o ultimo empilhado
+        // operations=['push 3','push 2','push 1','getMin']
+        let expected = "[1]"
+        inputs = ["4", "push 3", "push 2", "push 1", "getMin"]
         validate(expected: expected)
     }
 
     func test_06() {
-        // Prepare - todos os intervalos sobrepostos, so um pode ser escolhido
-        // meetings=[[1,10],[2,9],[3,8]]
-        let expected = "1"
-        inputs = ["3", "2", "1 10", "2 9", "3 8"]
-
-        // Action
+        // apos pop do minimo, getMin deve retornar o proximo menor
+        // operations=['push 5','push 1','getMin','pop','getMin']
+        let expected = "[1, 5]"
+        inputs = ["5", "push 5", "push 1", "getMin", "pop", "getMin"]
         validate(expected: expected)
     }
 
     func test_07() {
-        // Prepare - intervalos fora de ordem, resultado depende do sort por end time
-        // meetings=[[6,8],[1,2],[3,5],[2,4]]
-        let expected = "3"
-        inputs = ["4", "2", "6 8", "1 2", "3 5", "2 4"]
-
-        // Action
+        // top retorna o ultimo empilhado, nao o menor
+        // operations=['push 3','push 1','push 4','top']
+        let expected = "[4]"
+        inputs = ["4", "push 3", "push 1", "push 4", "top"]
         validate(expected: expected)
     }
 
     func test_08() {
-        // Prepare - intervalos com mesmo end time
-        // meetings=[[1,3],[2,3],[3,5]]
-        let expected = "2"
-        inputs = ["3", "2", "1 3", "2 3", "3 5"]
-
-        // Action
+        // multiplos getMin e tops intercalados
+        // operations=['push 2','push 2','getMin','top','pop','top']
+        let expected = "[2, 2, 2]"
+        inputs = ["6", "push 2", "push 2", "getMin", "top", "pop", "top"]
         validate(expected: expected)
     }
 }

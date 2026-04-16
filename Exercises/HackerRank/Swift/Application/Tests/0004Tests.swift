@@ -17,7 +17,7 @@ final class HR0004Tests: XCTestCase {
 
 
     /* Aux */
-    private func validate(expected: String) {
+    private func validate(expected: Bool) {
         // Prepare
         let provider = MockInputProvider(inputs: inputs)
 
@@ -25,118 +25,108 @@ final class HR0004Tests: XCTestCase {
         let result = ex.solution(input: provider)
 
         // Validation
-        XCTAssertEqual(expected, "\(result)")
+        XCTAssertEqual(expected, result)
     }
 
 
     /* Testes */
     func test_01() {
         // Prepare
-        // orderNumbers=[3,4,-1,1]
-        let expected = "2"
-        inputs = ["4", "3", "4", "-1", "1"]
+        // s1="abcde", s2="cdeab"
+        let expected = true
+        inputs = ["abcde", "cdeab"]
 
         // Action
         validate(expected: expected)
     }
 
     func test_02() {
-        // Prepare - array vazio, menor positivo é 1
-        // orderNumbers=[]
-        let expected = "1"
-        inputs = ["0"]
+        // Prepare - sample 0: identicas, nao eh rotacao nao-trivial
+        // s1="a", s2="a"
+        let expected = false
+        inputs = ["a", "a"]
 
         // Action
         validate(expected: expected)
     }
 
     func test_03() {
-        // Prepare - sample 0: n=0
-        // orderNumbers=[]
-        let expected = "1"
-        inputs = ["0"]
+        // Prepare - sample 1: letras diferentes, nao eh rotacao
+        // s1="a", s2="b"
+        let expected = false
+        inputs = ["a", "b"]
 
         // Action
         validate(expected: expected)
     }
 
+    /* Additional tests */
     func test_04() {
-        // Prepare - sample 1: único elemento é 1
-        // orderNumbers=[1]
-        let expected = "2"
-        inputs = ["1", "1"]
+        // Prepare - strings identicas com mais de um char
+        // s1="abc", s2="abc"
+        let expected = false
+        inputs = ["abc", "abc"]
 
         // Action
         validate(expected: expected)
     }
 
-
-    /* MARK: - Additional tests */
     func test_05() {
-        // Prepare - sequência completa de 1..n, faltando o próximo
-        // orderNumbers=[1,2,3]
-        let expected = "4"
-        inputs = ["3", "1", "2", "3"]
+        // Prepare - rotacao de um unico passo
+        // s1="abcd", s2="bcda"
+        let expected = true
+        inputs = ["abcd", "bcda"]
 
         // Action
         validate(expected: expected)
     }
 
     func test_06() {
-        // Prepare - só negativos, menor positivo é 1
-        // orderNumbers=[-3,-2,-1]
-        let expected = "1"
-        inputs = ["3", "-3", "-2", "-1"]
+        // Prepare - nao eh rotacao, mesmas letras mas ordem errada
+        // s1="abcd", s2="abdc"
+        let expected = false
+        inputs = ["abcd", "abdc"]
 
         // Action
         validate(expected: expected)
     }
 
     func test_07() {
-        // Prepare - duplicatas no array
-        // orderNumbers=[1,1,2,2]
-        let expected = "3"
-        inputs = ["4", "1", "1", "2", "2"]
+        // Prepare - rotacao pelo ultimo elemento
+        // s1="abcd", s2="dabc"
+        let expected = true
+        inputs = ["abcd", "dabc"]
 
         // Action
         validate(expected: expected)
     }
 
     func test_08() {
-        // Prepare - números grandes, mas falta o 1
-        // orderNumbers=[100,200,300]
-        let expected = "1"
-        inputs = ["3", "100", "200", "300"]
+        // Prepare - string com chars repetidos, rotacao valida
+        // s1="aab", s2="baa"
+        let expected = true
+        inputs = ["aab", "baa"]
 
         // Action
         validate(expected: expected)
     }
 
     func test_09() {
-        // Prepare - mix de negativos, zeros e positivos desordenados
-        // orderNumbers=[0,-1,2,1,5]
-        let expected = "3"
-        inputs = ["5", "0", "-1", "2", "1", "5"]
+        // Prepare - string com chars repetidos, identica
+        // s1="aaa", s2="aaa"
+        let expected = false
+        inputs = ["aaa", "aaa"]
 
         // Action
         validate(expected: expected)
     }
 
     func test_10() {
-        // Prepare - todos os elementos 1..n presentes, em pares invertidos
-        // orderNumbers=[2,1,4,3,6,5]
-        let expected = "7"
-        inputs = ["6", "2", "1", "4", "3", "6", "5"]
-
-        // Action
-        validate(expected: expected)
-    }
-
-    func test_11() {
-        // Prepare - todos os elementos 1..n presentes, ordem invertida com swap no final
-        // orderNumbers=[4,3,2,1,6,5]
-        let expected = "7"
-        inputs = ["6", "4", "3", "2", "1", "6", "5"]
+        // Prepare - primeira letra de s2 aparece multiplas vezes em s1
+        // a primeira ocorrencia nao forma rotacao, mas a segunda sim
+        // s1="aab", s2="aba"
+        let expected = true
+        inputs = ["aab", "aba"]
 
         // Action
         validate(expected: expected)

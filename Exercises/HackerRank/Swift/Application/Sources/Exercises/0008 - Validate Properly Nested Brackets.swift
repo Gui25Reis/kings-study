@@ -41,7 +41,7 @@
  link: https://www.hackerrank.com/contests/software-engineer-prep-kit/challenges/validate-properly-nested-brackets
  */
 
-struct Ex0010 {
+struct Ex0008 {
     func solution(input: InputProvider = DefaultInputProvider()) -> Bool {
         guard let line = input.readLine() else { return true }
         return areBracketsProperlyMatched(code_snippet: line)

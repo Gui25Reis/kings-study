@@ -70,7 +70,7 @@ fileprivate class SinglyLinkedListNode {
 }
 
 
-struct Ex0014 {
+struct Ex0012 {
     func solution(input: InputProvider = DefaultInputProvider()) -> [Int] {
         guard let nInput = input.readLine(), let n = Int(nInput)
         else { return [] }

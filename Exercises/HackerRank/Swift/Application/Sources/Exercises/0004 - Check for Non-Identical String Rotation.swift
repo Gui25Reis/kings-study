@@ -46,7 +46,7 @@
  link: https://www.hackerrank.com/contests/software-engineer-prep-kit/challenges/check-non-identical-string-rotation/
  */
 
-struct Ex0006 {
+struct Ex0004 {
     func solution(input: InputProvider = DefaultInputProvider()) -> Bool {
         guard let s1 = input.readLine(),
               let s2 = input.readLine()
