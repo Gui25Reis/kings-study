@@ -32,6 +32,16 @@ Personal repository for studying programming concepts, languages, and problem-so
 | [LeetCode](Exercises/Leetcode/) | ![Swift](https://img.shields.io/badge/Swift-FA7343?style=flat-square&logo=swift&logoColor=white) | Technical interview prep |
 | [HackerRank](Exercises/HackerRank/) | ![Swift](https://img.shields.io/badge/Swift-FA7343?style=flat-square&logo=swift&logoColor=white) | Technical interview prep |
 
+## Interviews
+
+<p align="justify">
+    Technical challenges from real selection processes. Each one is kept as a standalone project — separate from exercise platforms — because they reflect a specific context, a real company, and a concrete problem to be solved under pressure.
+</p>
+
+| Company | Language | Description |
+|---|---|---|
+| [Uber](Interviews/Uber/) | ![Swift](https://img.shields.io/badge/Swift-FA7343?style=flat-square&logo=swift&logoColor=white) | N-ary tree boundary traversal |
+
 ## Studies
 
 <p align="justify">
