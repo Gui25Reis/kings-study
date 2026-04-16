@@ -15,17 +15,6 @@ Personal repository for studying programming concepts, languages, and problem-so
     The goal is not just to know that something works — it's to understand why it works, and how the same idea looks and behaves across different languages and environments.
 </p>
 
-## Studies
-
-<p align="justify">
-    Proof-of-concept projects built to explore specific iOS topics in isolation. Each one came from a real curiosity or a concrete demand — a way to study a concept properly before applying it in a larger context.
-</p>
-
-| Project | Language | Description |
-|---|---|---|
-| [Keyboard Handler](Studies/KeyboardHandler/) | ![Swift](https://img.shields.io/badge/Swift-FA7343?style=flat-square&logo=swift&logoColor=white) | Generic handler to make any view follow the keyboard |
-| [Phone Masks](Studies/PhoneMasks/) | ![Swift](https://img.shields.io/badge/Swift-FA7343?style=flat-square&logo=swift&logoColor=white) | Phone mask for input usage with support for multiple formats |
-
 ## Exercises
 
 <p align="justify">
@@ -41,6 +30,19 @@ Personal repository for studying programming concepts, languages, and problem-so
 |---|---|---|
 | [URI / Beecrowd](Exercises/URI/) | ![C](https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white) ![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=mysql&logoColor=white) ![Swift](https://img.shields.io/badge/Swift-FA7343?style=flat-square&logo=swift&logoColor=white) | First contact, also used when teaching |
 | [LeetCode](Exercises/Leetcode/) | ![Swift](https://img.shields.io/badge/Swift-FA7343?style=flat-square&logo=swift&logoColor=white) | Technical interview prep |
+| [HackerRank](Exercises/HackerRank/) | ![Swift](https://img.shields.io/badge/Swift-FA7343?style=flat-square&logo=swift&logoColor=white) | Technical interview prep |
+
+## Studies
+
+<p align="justify">
+    Proof-of-concept projects built to explore specific iOS topics in isolation. Each one came from a real curiosity or a concrete demand — a way to study a concept properly before applying it in a larger context.
+</p>
+
+| Project | Language | Description |
+|---|---|---|
+| [Keyboard Handler](Studies/KeyboardHandler/) | ![Swift](https://img.shields.io/badge/Swift-FA7343?style=flat-square&logo=swift&logoColor=white) | Generic handler to make any view follow the keyboard |
+| [Phone Masks](Studies/PhoneMasks/) | ![Swift](https://img.shields.io/badge/Swift-FA7343?style=flat-square&logo=swift&logoColor=white) | Phone mask for input usage with support for multiple formats |
+
 
 ## Author
 <table>
