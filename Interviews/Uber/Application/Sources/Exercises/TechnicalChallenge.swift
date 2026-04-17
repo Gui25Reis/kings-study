@@ -1,10 +1,5 @@
 /*  Date: 15.04.26 - 10:00am  */
 
-/*
- PS: não consgui fazer o exercício a tempo. Mas dps da dica no fim q
- ele acabou passando, continuei pós reunião e consegui!
- */
-
 /* MARK: - Challenge
 # Given an N-ary tree, print the nodes visible to a person walking from the
 # bottom-left to the bottom-right in an arc that passes through the root.
@@ -38,6 +33,14 @@
  O input acaba sendo a estrutura de dados (Tree) já populada.
 */
 
+
+// MARK: - Solução
+
+/*
+ PS: não consegui fazer o exercício a tempo.
+ No fim, ele acabou dando uma dica. Logo dps que a entrevista acabou, continuei o exercício e consegui.
+ */
+
 class Tree {
     var value: Int
     var childs: [Tree]
@@ -48,19 +51,17 @@ class Tree {
     }
 }
 
+/*
+ Time: O(n) | Memory: O(m)
+ */
 func uberChallenge(root: Tree) -> [Int] {
     guard !root.childs.isEmpty else { return [root.value] }
     
-    //          [Height: ( L ,  R )]
-    var extremes = [Int: (Int, Int)]()
-
-    var arc: [Int]?
+    lazy var arc = [Int]()
     var total = 0
     var ind = 0
 
     func recursion(in trees: [Tree], h: Int) {
-        extremes[h] = (trees[0].value, trees[trees.count-1].value)
-        
         var newChild = [Tree]()
         for tree in trees {
             newChild += tree.childs
@@ -76,15 +77,16 @@ func uberChallenge(root: Tree) -> [Int] {
         let i = ind
         let j = total-1 - ind
         
-        let tuple = extremes[h]!
-        arc?[i] = tuple.0
-        arc?[j] = tuple.1
+        let left = trees[0].value
+        let right = trees[trees.count-1].value
         
+        arc[i] = left
+        arc[j] = right
         ind += 1
     }
     
     recursion(in: [root], h: 1)
-    return arc ?? []
+    return arc
 }
 
 
