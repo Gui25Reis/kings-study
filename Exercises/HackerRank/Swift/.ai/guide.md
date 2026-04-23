@@ -22,11 +22,11 @@ A IA atua como suporte — nunca como quem resolve. O objetivo é que o usuário
 
 ### 1. Ao receber um novo exercício
 
-Quando o usuário cria um novo arquivo de exercício (ex: `0005 - Nome do Exercício.swift`), a IA deve:
+Quando o usuário cria um novo arquivo de exercício (ex: `PR05 - Nome do Exercício.swift`), a IA deve:
 
 - **Ajustar a `struct`** — garantir que o `solution` lê o input corretamente conforme o `Input Format` descrito no comentário do arquivo, usando o padrão `InputProvider`
 - **Ajustar a função `fileprivate`** — garantir que a assinatura bate com o que a `struct` chama
-- **Criar o arquivo de testes** correspondente em `Application/Tests/`
+- **Criar o arquivo de testes** correspondente em `Application/Tests/Prep Kit/`
 
 A IA **não deve** sugerir, implementar ou comentar sobre a lógica de solução a não ser que o usuário peça explicitamente.
 
@@ -61,19 +61,29 @@ Quando o usuário não entende um conceito:
 
 ## Estrutura dos arquivos
 
+O projeto é organizado por **categoria de exercício**. Cada categoria tem sua própria pasta e seu próprio prefixo de arquivo. O padrão de estrutura é sempre o mesmo — o que muda é a pasta e o prefixo.
+
+Categorias existentes:
+
+| Categoria | Pasta | Prefixo | Exemplo |
+|-----------|-------|---------|---------|
+| Prep Kit | `Prep Kit/` | `PR` | `PR01 - Name.swift` / `ExPR01` / `PR01Tests` |
+
+Novas categorias seguirão o mesmo padrão — o prefixo será alinhado quando a categoria for criada.
+
 ### Exercício
 ```
-Application/Sources/Exercises/Prep Kit/PR00X - Nome do Exercício.swift
+Application/Sources/Exercises/<Categoria>/PPXX - Nome do Exercício.swift
 ```
 
 Cada arquivo contém:
 - Um comentário no topo com a descrição do problema, input format, exemplos e link
-- Uma `struct ExPR00X` com o método `solution(input:)` que lida com I/O
+- Uma `struct ExPPXX` com o método `solution(input:)` que lida com I/O
 - Uma função `fileprivate` que contém a lógica de solução do usuário
 
 ### Testes
 ```
-Application/Tests/Prep Kit/PR00XTests.swift
+Application/Tests/<Categoria>/PPXX Tests.swift
 ```
 
 ---
@@ -177,14 +187,14 @@ O `MockInputProvider` recebe `inputs: [String]` e devolve um elemento por chamad
 
 O `Input Format` varia por exercício — sempre ler o comentário do arquivo com atenção. Padrões mais comuns encontrados até agora:
 
-- **Elementos em linhas separadas**: cada número em uma linha (ex: 0001, 0004, 0007)
-- **Elementos na mesma linha separados por espaço**: todos numa linha só (ex: 0008)
-- **Matriz**: linha com qtd de rows + linha com qtd de colunas + uma linha por row com elementos separados por espaço (ex: 0002, 0009)
-- **String única**: uma linha só com a string (ex: 0005)
-- **Duas strings**: uma por linha (ex: 0006)
-- **Parâmetros extras após o array**: k, M, target etc. vêm depois dos elementos (ex: 0003, 0007)
-- **Grafo (links)**: linha com m (qtd de links) + linha com tamanho de cada link (geralmente 2, descartar) + m linhas com "a b" separados por espaço + linha com n (qtd de nós) (ex: 0022)
-- **Árvore BST com arrays**: linha com n + n linhas com values + linha com m + m linhas com leftChild + linha com p + p linhas com rightChild, todos elementos um por linha (ex: 0023)
+- **Elementos em linhas separadas**: cada número em uma linha (ex: PR01, PR04, PR07)
+- **Elementos na mesma linha separados por espaço**: todos numa linha só (ex: PR08)
+- **Matriz**: linha com qtd de rows + linha com qtd de colunas + uma linha por row com elementos separados por espaço (ex: PR02, PR09)
+- **String única**: uma linha só com a string (ex: PR05)
+- **Duas strings**: uma por linha (ex: PR06)
+- **Parâmetros extras após o array**: k, M, target etc. vêm depois dos elementos (ex: PR03, PR07)
+- **Grafo (links)**: linha com m (qtd de links) + linha com tamanho de cada link (geralmente 2, descartar) + m linhas com "a b" separados por espaço + linha com n (qtd de nós) (ex: PR22)
+- **Árvore BST com arrays**: linha com n + n linhas com values + linha com m + m linhas com leftChild + linha com p + p linhas com rightChild, todos elementos um por linha (ex: PR23)
 
 ---
 
