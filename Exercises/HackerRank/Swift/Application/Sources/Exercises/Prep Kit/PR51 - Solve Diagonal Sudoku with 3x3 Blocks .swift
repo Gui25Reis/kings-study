@@ -364,7 +364,7 @@ fileprivate func aiSolution(grid: [[Int]]) -> [[Int]] {
                     }
                 }
 
-                return false // nenhum numero funcionou, volta
+                return false // nenhum número funcionou, volta
             }
         }
         return true // sem zeros restantes

@@ -96,7 +96,7 @@ fileprivate func areBracketsProperlyMatched(code_snippet: String) -> Bool {
 
 
 /*
- Primeira solução apenas pra fazer funfar
+ Primeira solução apenas pra fazer funcionar
  
  PS: remove(at:) eh O(n), pois precisa organizar o vetor pós remoção
  fazendo essa solução ser O(n²) (quadrática) e não O(n) (linear)

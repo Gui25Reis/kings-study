@@ -129,7 +129,7 @@ fileprivate func findLongestArithmeticProgression(arr: [Int], k: Int) -> Int {
  Memória: O(n)
  */
 fileprivate func aiSolution(arr: [Int], k: Int) -> Int {
-    var dp = [Int: Int]() // dp[num] = tamanho da maior sequencia terminando em num
+    var dp = [Int: Int]() // dp[num] = tamanho da maior sequência terminando em num
     var maxLength = 0
 
     let unique = Set(arr)

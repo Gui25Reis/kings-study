@@ -70,7 +70,7 @@ fileprivate func isNonTrivialRotation(s1: String, s2: String) -> Bool {
 
 /*
  ============
- SUBMITION 02
+ SUBMISSION 02
  ============
  */
 
@@ -113,7 +113,7 @@ fileprivate func submission2(s1: String, s2: String) -> Bool {
 
 /*
  ============
- SUBMITION 01
+ SUBMISSION 01
  ============
  */
 fileprivate func submission1(s1: String, s2: String) -> Bool {

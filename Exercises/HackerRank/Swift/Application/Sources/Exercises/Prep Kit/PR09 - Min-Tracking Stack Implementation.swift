@@ -142,7 +142,7 @@ fileprivate func processCouponStackOperations(operations: [String]) -> [Int] {
 // MARK: - AI Solution
 fileprivate struct AIStack {
     private var stack = [Int]()
-    private var minStack = [Int]() // cada posicao guarda o minimo ate aquele momento
+    private var minStack = [Int]() // cada posição guarda o mínimo até aquele momento
 
     var top: Int { stack.last ?? 0 }
     var getMin: Int { minStack.last ?? 0 }

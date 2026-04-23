@@ -132,13 +132,13 @@ fileprivate func removeKthNodeFromEnd(head: SinglyLinkedListNode?, k: Int) -> Si
  Diferente da recursão que sempre vai ter a complexidade de espaço O(n), por conta dos frames que ficam na stack.
  */
 fileprivate func aiSolution(head: SinglyLinkedListNode?, k: Int) -> SinglyLinkedListNode? {
-    // Dummy node antes do head para simplificar remocao do head
+    // Dummy node antes do head para simplificar remoção do head
     let dummy = SinglyLinkedListNode(data: 0, next: head)
 
     var fast: SinglyLinkedListNode? = dummy
     var slow: SinglyLinkedListNode? = dummy
 
-    // Avanca fast k+1 passos (k+1 para slow parar no no ANTES do que sera removido)
+    // Avança fast k+1 passos (k+1 para slow parar no nó ANTES do que será removido)
     for _ in 0...k {
         guard fast?.next != nil else { return head } // k invalido
         fast = fast?.next
@@ -150,7 +150,7 @@ fileprivate func aiSolution(head: SinglyLinkedListNode?, k: Int) -> SinglyLinked
         slow = slow?.next
     }
 
-    // slow esta no no anterior ao que deve ser removido
+    // slow está no nó anterior ao que deve ser removido
     slow?.next = slow?.next?.next
 
     return dummy.next

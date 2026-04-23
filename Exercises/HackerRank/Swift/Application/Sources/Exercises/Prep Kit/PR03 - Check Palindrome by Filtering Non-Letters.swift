@@ -69,14 +69,14 @@ fileprivate func isAlphabeticPalindrome(code: String) -> Bool {
     for char in code {
         guard let ascii = char.asciiValue else { continue }
         
-        // lowercase
+        // uppercase
         if ascii >= 65 && ascii <= 90 {
             let asciiLowercase = ascii + 32
             asciiValues.append(asciiLowercase)
             continue
         }
-        
-        // uppercase
+
+        // lowercase
         if ascii >= 97 && ascii <= 122 {
             asciiValues.append(ascii)
         }
@@ -119,7 +119,7 @@ fileprivate func aiSolution(code: String) -> Bool {
 
 /*
  ============
- SUBMITION 02
+ SUBMISSION 02
  ============
  */
 fileprivate extension String {
@@ -184,7 +184,7 @@ fileprivate func submission2(code: String) -> Bool {
 
 /*
  ============
- SUBMITION 01
+ SUBMISSION 01
  ============
  */
 fileprivate func submission1(code: String) -> Bool {

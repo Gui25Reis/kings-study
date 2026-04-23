@@ -97,7 +97,7 @@ fileprivate func binarySearch(nums: [Int], target: Int) -> Int {
         let mid = (high+low)/2
         let number = nums[mid]
         
-        // Number founded
+        // Number found
         guard number != target else { return mid }
         
         if target < number {

@@ -105,7 +105,7 @@ struct ExPR13 {
 
 
 /*
- Não soube fazer. Vi q iria demorar muito.
+ Não soube fazer. Vi que iria demorar muito.
  PS: não foi enviado
  */
 fileprivate func generateAngleBracketSequences(n: Int) -> [String] {
